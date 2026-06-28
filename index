@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea Journey - Project Detail</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter, Lato (900 Black), Playfair Display, AND Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lato:wght@900&family=Playfair+Display:ital,wght@0,400;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Light Mode Base */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            overflow-x: hidden;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Lato Black Font Class */
+        .font-lato {
+            font-family: 'Lato', sans-serif;
+            font-weight: 900;
+        }
+
+        /* Lora Regular Font Class */
+        .font-lora {
+            font-family: 'Lora', serif;
+            font-weight: 400;
+        }
+
+        /* Custom Selection Color */
+        ::selection {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+
+        /* Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Image Utilities */
+        .parallax-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .zoom-container {
+            overflow: hidden;
+            background-color: #f3f4f6;
+        }
+        .zoom-container img {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .zoom-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Background Pattern */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, #e5e5e5 1px, transparent 1px),
+                              linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
+            background-size: 4rem 4rem;
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-8 py-8 flex justify-between items-center mix-blend-difference" id="navbar">
+        <a href="#" class="text-white text-lg font-bold tracking-tight hover:opacity-60 transition-opacity">
+            ZI WANG
+        </a>
+        <div class="flex items-center gap-8">
+            <a href="https://zi-wang.pages.dev/" class="group flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-white hover:opacity-60 transition-opacity">
+                <span>close</span>
+                <div class="w-8 h-[1px] bg-white group-hover:w-4 transition-all duration-300"></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative w-full min-h-screen flex flex-col justify-end px-6 md:px-24 pb-24 pt-32">
+        <div class="absolute inset-0 bg-grid-pattern z-0 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl w-full reveal-up active">
+            <!-- Title Area -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-black/10 pb-8 mb-12 gap-8 relative overflow-hidden">
+                <div class="flex flex-col gap-2 z-10 shrink-0">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Project Name</span>
+                    <!-- Main Title: Keeps Lato Black -->
+                    <h1 class="text-6xl md:text-8xl lg:text-9xl font-lato tracking-tighter text-black leading-[0.9]">
+                        Tea <br/> Journey
+                    </h1>
+                </div>
+                
+                <!-- Abstract Image -->
+                <div class="absolute right-0 bottom-0 w-full md:w-2/3 h-full md:h-[120%] -z-0 opacity-80 translate-y-8 md:translate-y-0">
+                    <!-- Removed grayscale classes -->
+                    <img src="https://github.com/ZiWang0531/portfolio/blob/main/TeaJourney1.png?raw=true" 
+                         alt="Tea Culture Context" 
+                         class="w-full h-full object-cover hover:scale-105 transition-all duration-700 ease-in-out object-center"
+                         style="-webkit-mask-image: linear-gradient(to right, transparent 10%, black 60%); mask-image: linear-gradient(to right, transparent 10%, black 60%);">
+                </div>
+            </div>
+
+            <!-- Brief -->
+            <p class="text-xl md:text-3xl text-gray-500 font-lora leading-relaxed max-w-4xl relative z-10">
+                <span class="text-black">An <strong>interactive learning website</strong> transforming <strong>Chinese tea culture</strong> into a <strong>structured, learner-centered experience</strong>.</span>
+            </p>
+
+            <!-- Launch Button -->
+            <div class="mt-12 relative z-10">
+                <a href="https://your-tea-journey.vercel.app/" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-black text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full hover:bg-gray-800 transition-all hover:scale-105 shadow-lg">
+                    Launch Project
+                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 bg-white">
+
+        <!-- Hero Image -->
+        <div class="w-full mb-32 overflow-hidden">
+            <!-- Removed grayscale classes -->
+            <img src="https://github.com/ZiWang0531/portfolio/blob/main/TeaJourney.png?raw=true" 
+                 alt="System Interface Visualization" 
+                 class="w-full h-auto shadow-sm block transition-transform duration-700 ease-in-out hover:scale-105">
+        </div>
+
+        <!-- Section 1: Overview -->
+        <section class="px-6 md:px-24 mb-32 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16">
+                <div class="md:col-span-4 reveal-up">
+                    <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-8 flex items-center gap-4">
+                        <span class="w-2 h-2 bg-black rounded-full"></span>
+                        Overview
+                    </h2>
+                </div>
+                <div class="md:col-span-8 reveal-up" style="transition-delay: 0.1s;">
+                    <!-- Overview Body Text: Changed to font-lora -->
+                    <p class="text-lg md:text-xl text-gray-800 leading-relaxed mb-12 font-lora">
+                        <strong>Tea Journey</strong> is an <strong>interactive digital environment</strong> exploring computational problem spaces. It promotes <strong>self-directed learning</strong> and <strong>scalable experiences</strong> through a comprehensive exploration of <strong>traditional Chinese tea culture</strong>.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="border-l border-black/10 pl-6">
+                            <h3 class="text-black font-lato mb-2 text-lg">Gamification & Simulation</h3>
+                            <!-- Grid Item Text: Changed to font-lora -->
+                            <p class="text-sm text-gray-600 leading-relaxed font-lora">
+                                Transforms traditional culture into a <strong>structured, learner-centered experience</strong> through engaging <strong>simulations</strong> and <strong>guided exploration</strong>.
+                            </p>
+                        </div>
+                        <div class="border-l border-black/10 pl-6">
+                            <h3 class="text-black font-lato mb-2 text-lg">AI-Supported Learning</h3>
+                            <!-- Grid Item Text: Changed to font-lora -->
+                            <p class="text-sm text-gray-600 leading-relaxed font-lora">
+                                Developed <strong>contextual multimedia content</strong> and <strong>API-supported</strong> knowledge exploration to adapt to learners' inquiries in real-time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="px-6 md:px-24 mb-32">
+            
+            <!-- Interface Carousel -->
+            <div class="flex flex-col md:flex-row gap-12 items-center mb-24 reveal-up">
+                <div class="w-full md:w-2/3 relative group">
+                    <div class="w-full aspect-[16/10] overflow-hidden bg-f3f4f6 relative border border-gray-100">
+                        <div id="carousel-1-track" class="flex h-full transition-transform duration-500 ease-out">
+                            <div class="min-w-full h-full zoom-container bg-gray-50 flex items-center justify-center">
+                                <img src="https://github.com/ZiWang0531/portfolio/blob/main/TeaJourney2.png?raw=true" 
+                                     alt="Interface Detail" class="w-full h-full object-contain">
+                            </div>
+                            <div class="min-w-full h-full zoom-container bg-gray-50 flex items-center justify-center">
+                                <img src="https://github.com/ZiWang0531/portfolio/blob/main/TeaJourney8.png?raw=true" 
+                                     alt="Alternative View" class="w-full h-full object-contain">
+                            </div>
+                            <div class="min-w-full h-full zoom-container bg-gray-50 flex items-center justify-center">
+                                <img src="https://github.com/ZiWang0531/portfolio/blob/main/TeaJourney9.png?raw=true" 
+                                     alt="Detail View" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <button onclick="moveCarousel(1, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-black/80 hover:text-white text-black backdrop-blur-md rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg border border-white/20 z-10">
+                            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                        </button>
+                        <button onclick="moveCarousel(1, 1)" class="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-black/80 hover:text-white text-black backdrop-blur-md rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg border border-white/20 z-10">
+                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                        </button>
+                        
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" id="carousel-1-dots">
+                            <div class="w-2 h-2 rounded-full bg-black/80 indicator-dot"></div>
+                            <div class="w-2 h-2 rounded-full bg-black/20 indicator-dot"></div>
+                            <div class="w-2 h-2 rounded-full bg-black/20 indicator-dot"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <span class="text-xs font-mono text-gray-400 block mb-4">01 — LEARNING EXPERIENCE</span>
+                    <!-- Reverted to font-serif italic text-2xl -->
+                    <h3 class="text-2xl font-serif italic text-black mb-4">Guided Exploration</h3>
+                    <!-- Description: Changed to font-lora -->
+                    <p class="text-sm text-gray-600 leading-relaxed font-lora">
+                        Interactive learning features and contextual multimedia content intuitively guide learners through the rich history and aesthetic procedures of Chinese tea.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Interaction Carousel -->
+            <div class="flex flex-col md:flex-row-reverse gap-12 items-center reveal-up">
+                <div class="w-full md:w-2/3 relative group">
+                    <div class="w-full aspect-[16/10] overflow-hidden bg-f3f4f6 relative border border-gray-100">
+                        <div id="carousel-2-track" class="flex h-full transition-transform duration-500 ease-out">
+                            <div class="min-w-full h-full zoom-container bg-gray-50 flex items-center justify-center">
+                                <img src="https://github.com/ZiWang0531/portfolio/blob/main/TeaJourney6.png?raw=true" 
+                                     alt="Node Expansion" class="w-full h-full object-contain object-center block mx-auto">
+                            </div>
+                            <div class="min-w-full h-full zoom-container bg-gray-50 flex items-center justify-center">
+                                <img src="https://github.com/ZiWang0531/portfolio/blob/main/TeaJourney3.png?raw=true" 
+                                     alt="Network View" class="w-full h-full object-contain object-center block mx-auto">
+                            </div>
+                            <div class="min-w-full h-full zoom-container bg-gray-50 flex items-center justify-center">
+                                <img src="https://github.com/ZiWang0531/portfolio/blob/main/TeaJourney4.png?raw=true" 
+                                     alt="Connection Logic" class="w-full h-full object-contain object-center block mx-auto">
+                            </div>
+                            <div class="min-w-full h-full zoom-container bg-gray-50 flex items-center justify-center">
+                                <img src="https://github.com/ZiWang0531/portfolio/blob/main/TeaJourney5.png?raw=true" 
+                                     alt="Network View" class="w-full h-full object-contain object-center block mx-auto">
+                            </div>
+                            <div class="min-w-full h-full zoom-container bg-gray-50 flex items-center justify-center">
+                                <img src="https://github.com/ZiWang0531/portfolio/blob/main/TeaJourney7.png?raw=true" 
+                                     alt="Network View" class="w-full h-full object-contain object-center block mx-auto">
+                            </div>
+                        </div>
+
+                        <button onclick="moveCarousel(2, -1)" class="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-black/80 hover:text-white text-black backdrop-blur-md rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg border border-white/20 z-10">
+                            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                        </button>
+                        <button onclick="moveCarousel(2, 1)" class="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-black/80 hover:text-white text-black backdrop-blur-md rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg border border-white/20 z-10">
+                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                        </button>
+                        
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" id="carousel-2-dots">
+                            <div class="w-2 h-2 rounded-full bg-black/80 indicator-dot"></div>
+                            <div class="w-2 h-2 rounded-full bg-black/20 indicator-dot"></div>
+                            <div class="w-2 h-2 rounded-full bg-black/20 indicator-dot"></div>
+                            <div class="w-2 h-2 rounded-full bg-black/20 indicator-dot"></div>
+                            <div class="w-2 h-2 rounded-full bg-black/20 indicator-dot"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/3 text-left">
+                    <span class="text-xs font-mono text-gray-400 block mb-4">02 — INTERACTION</span>
+                    <!-- Reverted to font-serif italic text-2xl -->
+                    <h3 class="text-2xl font-serif italic text-black mb-4">Procedural Simulation</h3>
+                    <!-- Description: Changed to font-lora -->
+                    <p class="text-sm text-gray-600 leading-relaxed font-lora">
+                        <strong>Gamification elements</strong> and <strong>interactive simulations</strong> support <strong>procedural knowledge acquisition</strong>, allowing users to practice the sequence and art of tea brewing virtually.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principles Section -->
+        <section class="px-6 md:px-24 py-24 bg-gray-50 border-t border-black/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-16 reveal-up">
+                    <h2 class="text-4xl md:text-5xl font-lato text-black mb-6">Applied Principles</h2>
+                    <!-- Modified: Added font-lora to change font to Lora Regular -->
+                    <p class="text-gray-500 font-lora">Improving <strong>engagement</strong> and supporting <strong>procedural knowledge acquisition</strong>.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="group p-8 bg-white border border-transparent hover:border-gray-200 hover:shadow-xl transition-all duration-300 reveal-up">
+                        <i data-lucide="layers" class="text-black w-8 h-8 mb-6 stroke-[1.5]"></i>
+                        <h4 class="text-lg font-lato text-black mb-3">Scaffolding</h4>
+                        <!-- Description: Changed to font-lora -->
+                        <p class="text-sm text-gray-600 leading-relaxed font-lora">
+                            Structured the learning experience with <strong>step-by-step guidance</strong>, gradually fading support as learners acquire mastery over the tea procedures.
+                        </p>
+                    </div>
+
+                    <div class="group p-8 bg-white border border-transparent hover:border-gray-200 hover:shadow-xl transition-all duration-300 reveal-up" style="transition-delay: 0.1s;">
+                        <i data-lucide="layout-grid" class="text-black w-8 h-8 mb-6 stroke-[1.5]"></i>
+                        <h4 class="text-lg font-lato text-black mb-3">Decomposition</h4>
+                        <!-- Description: Changed to font-lora -->
+                        <p class="text-sm text-gray-600 leading-relaxed font-lora">
+                            Broke down complex cultural narratives and brewing steps into <strong>manageable, interactive nodes</strong> to significantly reduce cognitive load.
+                        </p>
+                    </div>
+
+                    <div class="group p-8 bg-white border border-transparent hover:border-gray-200 hover:shadow-xl transition-all duration-300 reveal-up" style="transition-delay: 0.2s;">
+                        <i data-lucide="hand" class="text-black w-8 h-8 mb-6 stroke-[1.5]"></i>
+                        <h4 class="text-lg font-lato text-black mb-3">Experiential Learning</h4>
+                        <!-- Description: Changed to font-lora -->
+                        <p class="text-sm text-gray-600 leading-relaxed font-lora">
+                            Fostered <strong>learning through doing</strong> by utilizing interactive simulations that allow learners to practice, make choices, and reflect on outcomes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-32 px-6 md:px-24 text-center border-t border-black/5 bg-white">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-8">Next Project</p>
+            <a href="https://interactive-algebra-tool.pages.dev/" class="group inline-flex flex-col items-center">
+                <span class="text-4xl md:text-7xl font-lato text-black group-hover:text-gray-500 transition-colors duration-300">
+                    Learning Synapps
+                </span>
+                <span class="mt-4 text-sm font-serif italic text-gray-500">An AI-Supported Learning System</span>
+            </a>
+            
+            <div class="mt-24 pt-8 border-t border-black/5 flex justify-between text-xs text-gray-400 font-bold uppercase tracking-widest w-full max-w-7xl mx-auto">
+                <span>© 2026 Zi Wang</span>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-black transition-colors">Back to Top</a>
+                    <a href="https://zi-wang.pages.dev/" class="hover:text-black transition-colors">Home</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal-up');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 2. Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            document.querySelectorAll('.parallax-img').forEach(img => {
+                const speed = img.getAttribute('data-speed') || 0.1;
+                img.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+        });
+
+        // 3. Multi-Carousel Logic
+        const carouselStates = {
+            1: 0,
+            2: 0
+        };
+        
+        function moveCarousel(carouselId, direction) {
+            // Dynamically get the total number of slides for this specific carousel
+            const track = document.getElementById(`carousel-${carouselId}-track`);
+            const totalSlides = track.children.length;
+            
+            carouselStates[carouselId] = (carouselStates[carouselId] + direction + totalSlides) % totalSlides;
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const track = document.getElementById(`carousel-${carouselId}-track`);
+            const dotsContainer = document.getElementById(`carousel-${carouselId}-dots`);
+            const dots = dotsContainer.querySelectorAll('.indicator-dot');
+            const currentSlide = carouselStates[carouselId];
+            
+            // Move track
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.remove('bg-black/20');
+                    dot.classList.add('bg-black/80');
+                } else {
+                    dot.classList.add('bg-black/20');
+                    dot.classList.remove('bg-black/80');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
